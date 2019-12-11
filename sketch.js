@@ -45,54 +45,54 @@ function draw() {
 
   
 
-  if(fft.getEnergy(27.50) > threshold){
-    name = "w"
-    let a0 = new Note(name, windowWidth, 275)
-    notes.push(a0);
-  }
-  else if(fft.getEnergy(29.14) > threshold){
+  // if(fft.getEnergy(27.50) > threshold){
+  //   name = "w"
+  //   let a0 = new Note(name, windowWidth, 275)
+  //   notes.push(a0);
+  // }
+  // else if(fft.getEnergy(29.14) > threshold){
+  //   name = "mw"
+  //   let as0 = new Note(name, windowWidth, 275)
+  //   notes.push(as0);
+  // }
+  // else if(fft.getEnergy(30.87) > threshold){
+  //   name = "w"
+  //   let b0 = new Note(name, windowWidth, 267)
+  //   notes.push(b0);
+  // }
+  // else if(fft.getEnergy(32.70) > threshold){
+  //   name = "w"
+  //   let c1 = new Note(name, windowWidth, 260)
+  //   notes.push(c1);
+  // }
+  // else if(fft.getEnergy(34.65) > threshold){
+  //   name = "mw"
+  //   let cs1 = new Note(name, windowWidth, 260)
+  //   notes.push(cs1);
+  // }
+  // else if(fft.getEnergy(36.71) > threshold){
+  //   name = "w"
+  //   let d1 = new Note(name, windowWidth, 252)
+  //   notes.push(d1);
+  // }
+  if(fft.getEnergy(38.89) > threshold){
     name = "mw"
-    let as0 = new Note(name, windowWidth, 275)
-    notes.push(as0);
-  }
-  else if(fft.getEnergy(30.87) > threshold){
-    name = "w"
-    let b0 = new Note(name, windowWidth, 267)
-    notes.push(b0);
-  }
-  else if(fft.getEnergy(32.70) > threshold){
-    name = "w"
-    let c1 = new Note(name, windowWidth, 260)
-    notes.push(c1);
-  }
-  else if(fft.getEnergy(34.65) > threshold){
-    name = "mw"
-    let cs1 = new Note(name, windowWidth, 260)
-    notes.push(cs1);
-  }
-  else if(fft.getEnergy(36.71) > threshold){
-    name = "w"
-    let d1 = new Note(name, windowWidth, 252)
-    notes.push(d1);
-  }
-  else if(fft.getEnergy(38.89) > threshold){
-    name = "mw"
-    let ds1 = new Note(name, windowWidth, 252)
+    let ds1 = new Note(name, windowWidth, 297)
     notes.push(ds1);
   }
   else if(fft.getEnergy(41.20) > threshold){
     name = "w"
-    let e1 = new Note(name, windowWidth, 245)
+    let e1 = new Note(name, windowWidth, 297)
     notes.push(e1);
   }
   else if(fft.getEnergy(43.65) > threshold){
     name = "w"
-    let f1 = new Note(name, windowWidth, 237)
+    let f1 = new Note(name, windowWidth, 290)
     notes.push(f1);
   }
   else if(fft.getEnergy(46.25) > threshold){
     name = "mw"
-    let fs1 = new Note(name, windowWidth, 237)
+    let fs1 = new Note(name, windowWidth, 290)
     notes.push(fs1);
   }
   else if(fft.getEnergy(49.00) > threshold){
@@ -380,10 +380,30 @@ function draw() {
     let ds6 = new Note(name, windowWidth, 32)
     notes.push(ds6);
   }
-  else if(fft.getEnergy(1174.66) > threshold){
+  else if(fft.getEnergy(1318.51) > threshold){
     name = "w"
     let e6 = new Note(name, windowWidth, 25)
     notes.push(e6);
+  }
+  else if(fft.getEnergy(1396.91) > threshold){
+    name = "w"
+    let f6 = new Note(name, windowWidth, 17)
+    notes.push(f6);
+  }
+  else if(fft.getEnergy(1479.98) > threshold){
+    name = "mw"
+    let fs6 = new Note(name, windowWidth, 17)
+    notes.push(fs6);
+  }
+  else if(fft.getEnergy(1567.98) > threshold){
+    name = "w"
+    let g6 = new Note(name, windowWidth, 10)
+    notes.push(g6);
+  }
+  else if(fft.getEnergy(1567.98) > threshold){
+    name = "mw"
+    let gs6 = new Note(name, windowWidth, 10)
+    notes.push(gs6);
   }
 
   for (let i = 0; i < notes.length; i++){
@@ -411,26 +431,14 @@ class Note {
     //   for (var i = this.y; i > 230; i - 15)
     //   line(this.x - 5, i, this.x + 5, i)
     // }
-
   }
-
 }
 
-
-// function keyPressed() {
-//     if (key == 1) {
-//       threshold = 0;
-//     } 
-//     else if (key == 2){
-//       threshold = 51;
-//     }
-//     else if (key == 3){
-//       threshold = 102;
-//     }
-//     else if (key == 4){
-//       threshold = 153;
-//     }
-//     else if (key == 5){
-//       threshold = 204;
-//     }
-// }
+function keyPressed() {
+    if (keyCode == UP_ARROW) {
+      threshold = threshold + 1;
+    } 
+    else if (keyCode == DOWN_ARROW){
+      threshold = threshold - 1;
+    }
+}
